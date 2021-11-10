@@ -20,8 +20,8 @@ print('Enter the itag:')
 video=yt.streams.get_by_itag(input())
 print('Downloading Video......')
 Vpath = "F:\DSA Bootcamp\Vid/"
-video_filename=video.title
-print(video_filename)
+print(video.bitrate)
+print(video.title)
 print(video.filesize)
 video.download(Vpath)
 print("Video Downloaded")
