@@ -2,9 +2,8 @@ from imageio.plugins import ffmpeg
 from pytube import YouTube
 
 print("enter the LInk:")
-link=input()
-
-yt=YouTube(link)
+# link=input()
+yt=YouTube(input())
 
 print(yt.streams.filter(type='audio'))
 audio=yt.streams.get_by_itag(input())
