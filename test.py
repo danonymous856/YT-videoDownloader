@@ -19,12 +19,11 @@ def sepVid_Aud():
     print("Audio Downloaded \n\n")
 
     print(yt.streams.filter(progressive=False, type='video'))
-    print('Enter the itag:')
+    print('Enter the itag for video : ')
     video = yt.streams.get_by_itag(input())
     print('Downloading Video......')
     Vpath = "F:\DSA Bootcamp\Vid/"
-    video_filename = video.title
-    print(video_filename)
+    print(video.title)
     print(video.filesize)
     video.download(Vpath)
     print("Video Downloaded")
@@ -50,12 +49,8 @@ def main():
     itag = input()
     vid= yt.streams.get_by_itag(itag)
 
-    yourNeed = (vid.filesize > 300000000)
-
-    if yourNeed:
+    if (vid.resolution > "1080p"):
         sepVid_Aud()
-    elif yourNeed & (vid.resolution > '480p') :
-        vid()
     else:
         Vid()
 
