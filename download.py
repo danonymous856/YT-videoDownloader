@@ -1,12 +1,9 @@
-import array
+from pytube import YouTube, StreamQuery
 
-from pytube import YouTube
-
-print("enter the link :")
-
-yt = YouTube(input())
-
-
+print("Enter the Link:")
+link=input()
+yt=YouTube(link)
+# print(yt.streams.filter())
 def sepVid_Aud(itag, audiopath=input(), videopath=input()):
     print("Going to download the audio and video seperately:")
     print(yt.streams.filter(type='audio'))
@@ -31,8 +28,6 @@ def sepVid_Aud(itag, audiopath=input(), videopath=input()):
     print("Video Downloaded\n")
     # print(audiopath,audio.title,'.mp4')
     pass
-
-
 def Vid(itag):
     print("Going to download the whole video:")
     print(yt.streams.filter(progressive=True, type='video'))
@@ -45,7 +40,6 @@ def Vid(itag):
     print('Downloading Video......')
     print("Video Downloaded")
     pass
-
 def main():
     print(yt.streams.filter())
 
@@ -56,8 +50,20 @@ def main():
     resolut_n=vid.resolution
 
     if (resolut_n >= '1080p'):
-        sepVid_Aud(itag)
+        print("Please enter the PAth directory separately for audio and video respectively:")
+        print("AUdio directory:")
+        aud = input()
+        print("Video directory:")
+        Vide = input()
+        sepVid_Aud(itag,audiopath=aud,videopath=Vide)
     else:
         Vid(itag)
-
+    pass
 print(main())
+
+
+
+
+
+
+

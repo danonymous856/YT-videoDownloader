@@ -1,8 +1,9 @@
 from imageio.plugins import ffmpeg
 from pytube import YouTube
+from pytube.cli import on_progress
 
 print("enter the LInk:")
-# link=input()
+
 yt=YouTube(input())
 
 print(yt.streams.filter(type='audio'))
@@ -20,7 +21,6 @@ print('Enter the itag:')
 video=yt.streams.get_by_itag(input())
 print('Downloading Video......')
 Vpath = "F:\DSA Bootcamp\Vid/"
-print(video.bitrate)
 print(video.title)
 print(video.filesize)
 video.download(Vpath)
@@ -28,7 +28,7 @@ print("Video Downloaded")
 
 
 # input_video = ffmpeg.input('./test/test_video.webm')
-#
+#https://youtu.be/BFW2JvTJfFIhttps://youtu.be/BFW2JvTJfFI
 # input_audio = ffmpeg.input('./test/test_audio.webm')
 #
 # ffmpeg.concat(input_video, input_audio, v=1, a=1).output('./processed_folder/finished_video.mp4').run()
