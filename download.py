@@ -3,7 +3,9 @@ from pytube import YouTube, StreamQuery
 print("Enter the Link:")
 link=input()
 yt=YouTube(link)
+
 # print(yt.streams.filter())
+
 def sepVid_Aud(itag, audiopath=input(), videopath=input()):
     print("Going to download the audio and video seperately:")
     print(yt.streams.filter(type='audio'))
@@ -58,9 +60,8 @@ def main():
         sepVid_Aud(itag,audiopath=aud,videopath=Vide)
     else:
         Vid(itag)
-    pass
-print(main())
-
+if __name__=="__main__":
+    main()
 
 
 

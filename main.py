@@ -9,7 +9,7 @@ yt=YouTube(input())
 print(yt.streams.filter(type='audio'))
 audio=yt.streams.get_by_itag(input())
 print('Downloading Audio......')
-APath = "F:\DSA Bootcamp\Aud/"
+APath = "E:/aud"
 
 audio_filename=audio.title
 print(audio_filename)
@@ -20,7 +20,7 @@ print(yt.streams.filter(progressive=False,type='video'))
 print('Enter the itag:')
 video=yt.streams.get_by_itag(input())
 print('Downloading Video......')
-Vpath = "F:\DSA Bootcamp\Vid/"
+Vpath = "E:/vid"
 print(video.title)
 print(video.filesize)
 video.download(Vpath)
