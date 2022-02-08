@@ -1,14 +1,13 @@
 import pytube
 from pytube import YouTube
 
-print("Please enter the link : ")
-yt=YouTube(input())
+yt=YouTube(input("Please enter the link : "))
 
 print("Actually you can choose with itag for which video you prefer the most :")
 
 itag=(None,"160","133","18","135","22","299","400","401")
-for i in range(1,len(itag)-1):
-    print(i,itag[i],sep=":")
+for i in range(1,len(itag)):
+    print(i,":",itag[i],"=>",yt.streams.get_by_itag(itag=itag[i]))
 
 class HighResolution(object):
     def __init__(self,itag):
@@ -88,11 +87,17 @@ class HighResolution(object):
 
 class LowResolution(HighResolution):
     def __init__(self,type):
-        super().__init__()
+        super().__init__(itag)
         self.type="video"
         print("These Low Resolution Class Has been created for only Downloading videos between 140p - 720p .\n","As mostly these are peogressively True no merging would be required .")
 
+        try:
+            HighResolution.Quality(self.Quality(self.quality))
+        except:
+            HighResolution.Download()
 
-down=HighResolution(itag[i])
-down.Download()
+
+
+
+
 
