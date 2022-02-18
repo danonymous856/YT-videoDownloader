@@ -73,10 +73,3 @@ def main():
 
 call = main()
 print(call)
-
-def nothin():
-    """
-    :Topic: To directly use it in the terminal itself
-    :return: ffmpeg -i video.mp4 -i audio.mp4 -c:v copy -c:a aac output.mp4"
-    """
-
